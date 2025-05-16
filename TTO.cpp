@@ -142,10 +142,22 @@ public:
 int main() {
     int p;
     int rows, cols;
-    cout << "Enter # of rows for the board: ";
-    cin >> rows;
-    cout << "Enter # of columns for the board: ";
-    cin >> cols;
+    cout << "Welcome to Tic-Tac-Toe!" << endl;
+    do {
+        cout << "Enter # of rows for the board (2-10): ";
+        cin >> rows;
+        if (rows < 2 || rows > 10) {
+            cout << "Rows must be between 2 and 10. Please try again." << endl;
+        }
+    } while (rows < 2 || rows > 10);
+
+    do {
+        cout << "Enter # of columns for the board (2-10): ";
+        cin >> cols;
+        if (cols < 2 || cols > 10) {
+            cout << "Columns must be between 2 and 10. Please try again." << endl;
+        }
+    } while (cols < 2 || cols > 10);
 
     TicTacToe game(rows, cols);
     game.play();
